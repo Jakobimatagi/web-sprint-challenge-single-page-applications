@@ -31,6 +31,9 @@ const [formValues, setFormValues] = useState(initialValues);
 const [formErrors, setFormErros] = useState(initialErrors);
 const [disabled, setDisabled] = useState(initialDisabled);
 
+const updateForm = (inputName, inputValue) => {
+  setFormValues({...formValues, [inputName]: inputValue})
+}
 const postOrder = (postNewOrder) => {
   axios
   .get('http://localhost:3001/')
@@ -80,7 +83,7 @@ const inputChange = (name, value) =>{
     <Home />
   </Route>
   <Route path={'/Form'}>
-    <Form submit={formSubmit}/>
+    <Form submit={formSubmit} values={initialValues} update={updateForm}/>
   </Route>
 </Switch>
 
