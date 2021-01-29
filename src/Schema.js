@@ -1,11 +1,18 @@
 import * as Yup from 'yup'
 
-const schema = Yup.object().shape({
+export default Yup.object().shape({
     name: Yup
     .string()
-
     .min(2, "Name must be 2 characters long"),
-    size: Yup
-    ,
+    size: Yup,
+
+    toppings: Yup,
+
+    special: Yup,
+
+    topping1: Yup,
+    topping2: Yup,
+    topping3: Yup,
+    topping4: Yup
     
 })
